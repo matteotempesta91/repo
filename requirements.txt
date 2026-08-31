@@ -2,6 +2,8 @@ transformers
 torch
 scikit-learn
 pandas
+numpy
+openpyxl
 pytest
 seaborn
 matplotlib
