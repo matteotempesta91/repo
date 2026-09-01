@@ -163,3 +163,7 @@ In particolare, i test validano:
 - il corretto calcolo delle metriche di performance
 - la coerenza dell’output generato dalle funzioni principali
 - il funzionamento della logica di simulazione dell’inferenza
+
+## Deploy
+
+Il deploy su Hugging Face non è stato realizzato perché facoltativo. Il progetto si è concentrato sulla parte di analisi del sentiment, pipeline CI/CD e monitoraggio delle performance del modello.
