@@ -3,7 +3,7 @@ import pandas as pd
 from functions import calculate_performance
 from functions import display_performance
 
-
+# Caricamento del modello di sentiment analysis
 model_path = "cardiffnlp/twitter-roberta-base-sentiment-latest"
 sentiment_task = pipeline("sentiment-analysis", model=model_path, tokenizer=model_path)
 df = pd.read_excel("BanglaEcomReviewCorpus.xlsx", engine="openpyxl")
