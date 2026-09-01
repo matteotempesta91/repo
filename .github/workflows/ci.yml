@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Show Python version
+        run: python --version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Show installed packages
+        run: pip list
+
+      - name: Run tests
+        env:
+          PYTHONPATH: .
+        run: |
+          if pytest -q; then
+            echo "Tutto ok: i test sono passati con successo."
+          else
+            echo "Attenzione: alcuni test sono falliti."
+            exit 1
+          fi
